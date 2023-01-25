@@ -1,5 +1,6 @@
-
-# 09-README-Generator
+const generateMarkdown = (data) => {
+  return `
+# ${data.title}
 
 [![GitHub version](https://badge.fury.io/gh/yourusername%2Fyourrepo.svg)](https://badge.fury.io/gh/yourusername%2Fyourrepo)
 [![Build Status](https://travis-ci.org/yourusername/yourrepo.svg?branch=master)](https://travis-ci.org/yourusername/yourrepo)
@@ -19,20 +20,20 @@
 - [Questions](#questions)
 
 ## Description
-You can quickly and easily generate a README file by using a command-line application to generate one. This allows the project creator to devote more time working on the project.
+${data.description}
 
 ## Screenshots
-![image of the application 1](./images/screenshot.png)
-![image of the application 2](./images/screenshot1.png)
-![image of the application 3](./images/screenshot2.png)
+![image of the application 1](${data.screenshot1})
+![image of the application 2](${data.screenshot2})
+![image of the application 3](${data.screenshot3})
 
 ## Installation
-In order to install inquirer, please use npm i inquirer@8.2.4. The application will be invoked by using the following command: node index.js
+${data.installation}
 
 ## Usage
-The application will be invoked by using the following command: node index.js
+${data.usage}
 
-You can also watch a video demonstration of the application [here](https://drive.google.com/file/d/1dmH91ZHOyLZLzmWokfjICXJqJ9yEtZV6/view).
+You can also watch a video demonstration of the application [here](${data.video}).
 
 ## FAQ
 - Q: How does this application solve the problem?
@@ -47,14 +48,18 @@ You can also watch a video demonstration of the application [here](https://drive
 - v1.1: Bug fix for issue #23
 
 ## License
-This project is licensed under the MIT license.
+This project is licensed under the ${data.license} license.
 
 ## Contributing
-Pull requests are welcome, please open an issue first to discuss what you would like to change. thank you 
+${data.contributing}
 
 ## Tests
-This application has been tested by the creator and it works fine.
+${data.tests}
 
 ## Questions
-For any additional questions, please contact me at chibane.tkd04@gmail.com or visit my GitHub profile at https://github.com/Ash0422.
+For any additional questions, please contact me at ${data.email} or visit my GitHub profile at https://github.com/${data.github}.
+![Profile Picture](${data.profilePicture})
+`
+}
 
+module.exports = generateMarkdown;
